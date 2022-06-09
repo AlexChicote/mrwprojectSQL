@@ -1,0 +1,41 @@
+pip freeze > requirements.txt
+
+source env/bin/activate
+
+deactivate
+
+create exe file after installing pyinstaller
+pyinstaller --onefile  -w --icon=logo.ico mrwApp.py
+
+You have to add -w if you do not want the terminal to pop
+
+Before you turn it into a exe, rename the file to .pyw instead of .py----NO NEED
+
+
+
+Improvements:
+1. Add the age in months in folder name. FET 3/31/22---Not working Young's month wrong
+2. Child's name in consent's files. FET 3/31/22
+3. Installed pyinstaller
+4. ONCE DONE WITH ONE CONSENT, i can not move to a second one. FIXED on 4/15/22
+5. MOVE IT TO GOOGLE DRIVE
+6. Once I am done with consents, I want the for to clear.
+7.LEARN TO USE WINFO_children.
+8. Reset Consents to no after submission.
+
+
+
+Pending:
+1. Fix error:
+2022-04-15 07:30:43.343 python[77671:2366062]
+Warning: Expected min height of view: (<NSButton: 0x7fbec6851c00>) to be less than or equal to 30 but got a height of 32.000000.
+This error will be logged once per view in violation.
+2. Empty entries once the documents are created in Consent and Delay Forms.
+3. If I run it twice with the same info per child it creates twice the folder and files. SOme filter does not work.
+4. Send the sensory profile to the kid's folder.
+5. Use the consent form to add children to sheet.
+
+
+Stuck he:
+
+sqlite3.OperationalError: table clients has 17 columns but 11 values were supplied

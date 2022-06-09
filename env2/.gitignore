@@ -1,0 +1,19 @@
+# Ignore Mac system files
+.DS_store
+
+# Ignore folders
+node_modules
+credentials/
+lib/
+bin/
+__pycache__/
+database/
+
+
+#extensions
+
+*.cfg
+
+#files
+ids_and_more.py
+big_sheet.pkl
