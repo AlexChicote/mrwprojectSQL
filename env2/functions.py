@@ -14,7 +14,7 @@ import pandas as pd
 from googleapiclient.http import MediaFileUpload
 from googleapiclient.http import MediaIoBaseDownload
 from google_drive import service
-import ids_and_more as im
+import credentials.ids_and_more as im
 import os
 
 """

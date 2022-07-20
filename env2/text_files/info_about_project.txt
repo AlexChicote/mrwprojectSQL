@@ -34,6 +34,7 @@ This error will be logged once per view in violation.
 3. If I run it twice with the same info per child it creates twice the folder and files. SOme filter does not work.
 4. Send the sensory profile to the kid's folder.
 5. Use the consent form to add children to sheet.
+6. Send message if ei_number does not exist in the list
 
 
 Stuck he:

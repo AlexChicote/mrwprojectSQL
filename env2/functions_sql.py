@@ -66,8 +66,7 @@ def get_tables_in_database(database):
     #Closing the connection
     conn.close()
 
-
-def get_column_names_in_table(table_name):
+def drop_rows_table(table_name,column_name,condition):
 
     #Connecting to sqlite
     conn = sqlite3.connect('./database/ot_clients.db')
@@ -75,16 +74,16 @@ def get_column_names_in_table(table_name):
     #Creating a cursor object using the cursor() method
     cursor = conn.cursor()
 
-    #table names
-
-    cursor.execute(f"SELECT * from {table_name}; ")
-    print('COLUMN NAMES:',list(map(lambda x: x[0],cursor.description)))
+    #Droping rows by condition
+    #query
+    cursor.execute(f"DELETE FROM {table_name} where {column_name}={condition};")
 
     #Commit your changes in the database
     conn.commit()
 
     #Closing the connection
     conn.close()
+
 
 def dataframe_to_sqltable(csv_file, table_name):
 
@@ -197,6 +196,10 @@ def sqltable_to_dataframe(table_name):
     #query
     cursor.execute(f"select * from {table_name};")
     cols = [column[0] for column in cursor.description]
+    #Comit your changes
+    conn.commit()
+    #Close the connection
+    conn.close()
 
     return pd.DataFrame.from_records(data=cursor.fetchall(),columns=cols)
 
@@ -219,7 +222,21 @@ def changing_column_dtype(table_name,column_name,datatype):
 
     #Closing the connection
     conn.close()
+def getting_column_names(table_name):
 
+    conn = sqlite3.connect('./database/ot_clients.db')
+
+    #Creating a cursor object using the cursor() method
+    cursor = conn.cursor()
+    #query
+    cursor.execute(f"select * from {table_name};")
+    cols = [column[0] for column in cursor.description]
+    #Comit your changes
+    conn.commit()
+    #Close the connection
+    conn.close()
+
+    return cols
 
 """
 clients columns
